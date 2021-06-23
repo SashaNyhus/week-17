@@ -11,11 +11,7 @@ def main():
 
 @app.route("/song-results", methods=['POST'])
 def postSearchResults():
-    formData = request.form
-    print(formData)
-    queryDict = formData.items()
-    songQuery = queryDict['query']
-    print(songQuery)
+    songQuery = request.form.get('query')
     result = shazam.search(songQuery, 0)
     hits = result['tracks']['hits']
     return render_template('song-results.html', hits=hits, query=songQuery)
