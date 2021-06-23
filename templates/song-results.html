@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <h2>Your search for {{query}} found: </h2>
+        {%for songDict in hits %}
+        <h3>{{songDict['track']['title']}}</h3>
+        <h4>{{songDict['track']['subtitle']}}</h4>
+        <img src={{ songDict['track']['images']['coverart'] }} alt={{songDict['track']['title']}} />
+        {% endfor %}
+    </body>
+</html>
