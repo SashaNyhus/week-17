@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
+            <title>{% block title %}{% endblock %} - Song Search</title>
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <a class="nav" href="/">Home</a>
+        </header>
+        <div id="content">{% block content %}{% endblock %}</div>
+        <footer>
+            <a href="https://github.com/SashaVM">More Code by Sasha</a>
+        </footer>
+    </body>
+</html>

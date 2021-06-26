@@ -1,10 +1,10 @@
-<html>
-    <body>
-        <h2>{{message}}</h2>
-        <form action="/song-results" method="POST">
-            <label for="query">Search for a Song: </label>
-            <input type="text" id="query" name="query">
-            <button>GO</button>
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Search for a Song{% endblock %}
+{% block content %}
+    <h2>{{message}}</h2>
+    <form action="/song-results" method="POST">
+        <label for="query">Search for a Song: </label>
+        <input type="text" id="query" name="query">
+        <button>GO</button>
+    </form>
+{% endblock %}
