@@ -31,14 +31,13 @@ def postSearchResults():
         return render_template('whoops.html', message=message)
 
 
-@app.route("/recommendations", methods=['POST'])
-def postRecommendations():
-    key = request.form.get('key')
+@app.route("/recommendations/<song>/<artist>/<key>", methods=['GET'])
+def postRecommendations(song, artist, key):
     result = shazam.get_recommendations(key)
     if 'tracks' in result:
         tracks = result['tracks']
         tracks = checkForMissingKeys(tracks)
-        return render_template('recommendations.html', tracks=tracks)
+        return render_template('recommendations.html', song=song, artist=artist, tracks=tracks)
     else:
         message="No results found"
         return render_template('whoops.html', message=message)

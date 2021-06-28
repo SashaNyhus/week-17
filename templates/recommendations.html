@@ -1,17 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Recommmendations {% endblock %}
+{% block title %}Recommmendations based on {{song}} {% endblock %}
 {% block content %}
+<h2 class="page-header">More music like <em>{{song}}</em> by {{artist}}:</h2>
     {% for result in tracks %}
     <div class="result-box">
         <img src={{ result['images']['coverart'] }} alt="Album art not found" />
         <div class="result-text">
             <h3>{{result['title']}}</h3>
             <h4>{{result['subtitle']}}</h4>
-            <form action="/recommendations" method="POST">
-                <input type="text" readonly name="key" id={{result['key']}} value={{result['key']}}>
-                <button>See more like this</button>
-                <button>Open in Spotify</button>
-            </form>
+            <a href="/recommendations/{{result['title']}}/{{result['subtitle']}}/{{result['key']}}">See more like this</a>
+            <a href="result['hub']['providers'][0]['actions'][0]['uri']">{{result['hub']['providers'][0]['caption']}}</a>
         </div>
     </div>
     {% endfor %}
