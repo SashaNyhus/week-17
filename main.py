@@ -22,6 +22,9 @@ def postSearchResults():
     result = shazam.search(songQuery, 0)
     if 'tracks' in result:
         hits = result['tracks']['hits']
+        resultPage2 = shazam.search(songQuery, 5)
+        if 'tracks' in resultPage2:
+            hits.extend(resultPage2['tracks']['hits'])
         return render_template('song-results.html', hits=hits, query=songQuery)
     else:
         message="No results found"
