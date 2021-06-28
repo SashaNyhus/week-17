@@ -1,12 +1,14 @@
 <html>
     <head>
         {% block head %}
+            <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
             <link rel="stylesheet" href="{{url_for('static', filename='styles/main.css')}}">
             <title>{% block title %}{% endblock %} - Song Search</title>
         {% endblock %}
     </head>
     <body>
         <header>
+            <img src="https://cdn.pixabay.com/photo/2016/11/19/00/12/wave-1837426_1280.png" alt="">
             <a class="nav" href="/">Home</a>
         </header>
         <div id="content">{% block content %}{% endblock %}</div>

@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 body {
@@ -8,17 +9,21 @@ body {
 }
 
 header, footer {
-    /* box-sizing: border-box; */
     width: 100%;
     padding: 10px;
-    background-color: darkred;
+    background-color: aquamarine;
     color: whitesmoke;
     position: fixed;
+    display: flex;
 }
 
 header {
     top: 0;
-    height: 30px;
+    height: 60px;
+}
+
+header > img {
+    height: 35px;
 }
 
 footer {
@@ -26,14 +31,15 @@ footer {
 }
 
 .nav {
+    padding: 1% 2%;
     text-decoration: none;
-    color: whitesmoke;
-    font-size: 2em;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.3em;
 }
 
 #content {
-    margin-top: 30px;
-    padding: 15px;
+    padding: 70px 30px;
     height: 100vh;
     background-color: whitesmoke;
 }
