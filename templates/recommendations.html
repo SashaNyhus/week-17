@@ -2,12 +2,17 @@
 {% block title %}Recommmendations {% endblock %}
 {% block content %}
     {% for result in tracks %}
-    <h3>{{result['title']}}</h3>
-    <h4>{{result['subtitle']}}</h4>
-    <img src={{ result['images']['coverart'] }} alt="Album art not found" />
-    <form action="/recommendations" method="POST">
-        <input type="text" readonly name="key" id={{result['key']}} value={{result['key']}}>
-        <button>See more like this</button>
-    </form>
+    <div class="result-box">
+        <img src={{ result['images']['coverart'] }} alt="Album art not found" />
+        <div class="result-text">
+            <h3>{{result['title']}}</h3>
+            <h4>{{result['subtitle']}}</h4>
+            <form action="/recommendations" method="POST">
+                <input type="text" readonly name="key" id={{result['key']}} value={{result['key']}}>
+                <button>See more like this</button>
+                <button>Open in Spotify</button>
+            </form>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}

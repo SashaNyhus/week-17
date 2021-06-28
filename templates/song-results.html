@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Search Results for {{query}} {% endblock %}
 {% block content %}
-    <h2>Your search for "{{query}}" found: </h2>
+    <h2 class="page-header">Your search for "{{query}}" found: </h2>
     {%for songDict in hits %}
-    <h3>{{songDict['track']['title']}}</h3>
-    <h4>{{songDict['track']['subtitle']}}</h4>
-    <img src={{ songDict['track']['images']['coverart'] }} alt={{ songDict['track']['title'] }} />
-    <form action="/recommendations" method="POST">
-        <!-- <input type="text" readonly name="name" id={{songDict['track']['title']}} value={{songDict['track']['title']}}> -->
-        <!-- <input type="text" readonly name="artist" id={{songDict['track']['subtitle']}} value={{songDict['track']['subtitle']}}> -->
-        <input type="text" readonly name="key" id={{songDict['track']['key']}} value={{songDict['track']['key']}}>
-        <button>See more like this</button>
-    </form>
+    <div class="result-box">
+        <img src={{ songDict['track']['images']['coverart'] }} alt={{ songDict['track']['title'] }} />
+        <div class="result-text">
+            <h3>{{songDict['track']['title']}}</h3>
+            <h4>{{songDict['track']['subtitle']}}</h4>
+            <form action="/recommendations" method="POST">
+                <!-- <input type="text" readonly name="name" id={{songDict['track']['title']}} value={{songDict['track']['title']}}> -->
+                <!-- <input type="text" readonly name="artist" id={{songDict['track']['subtitle']}} value={{songDict['track']['subtitle']}}> -->
+                <input type="text" readonly name="key" id={{songDict['track']['key']}} value={{songDict['track']['key']}}>
+                <button>See more like this</button>
+                <button>Open in Spotify</button>
+            </form>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}
