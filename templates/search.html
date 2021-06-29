@@ -2,9 +2,10 @@
 {% block title %}Search for a Song{% endblock %}
 {% block content %}
     <h2 class="page-header">{{message}}</h2>
-    <form class="search-box" action="/song-results" method="POST">
-        <label for="query">Search for a Song: </label>
-        <input type="text" id="query" name="query">
-        <button>GO</button>
-    </form>
+    <div class="search-box">
+        <form class="search-form" action="/song-results" method="POST">
+            <button class="search-button"></button>
+            <input type="text" class="search-input" id="query" name="query" placeholder="Search for a Song" required>
+        </form>
+    </div>
 {% endblock %}
