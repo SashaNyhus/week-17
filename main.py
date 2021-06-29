@@ -16,6 +16,7 @@ def main():
     message = "Welcome to Song Search"
     return render_template('search.html', message=message)
 
+
 @app.route("/song-results", methods=['POST'])
 def postSearchResults():
     songQuery = request.form.get('query')
@@ -27,7 +28,7 @@ def postSearchResults():
             hits.extend(resultPage2['tracks']['hits'])
         return render_template('song-results.html', hits=hits, query=songQuery)
     else:
-        message="No results found"
+        message = "No results found"
         return render_template('whoops.html', message=message)
 
 
@@ -39,7 +40,7 @@ def postRecommendations(song, artist, key):
         tracks = checkForMissingKeys(tracks)
         return render_template('recommendations.html', song=song, artist=artist, tracks=tracks)
     else:
-        message="No results found"
+        message = "No results found"
         return render_template('whoops.html', message=message)
 
 
