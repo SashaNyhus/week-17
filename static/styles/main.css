@@ -74,18 +74,17 @@ footer > a {
 }
 
 .search-input {
-    height: 60px;
-    width: 60px;
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
     border-style: none;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    color: white;
     padding: 10px;
     font-size: 18px;
     letter-spacing: 2px;
     outline: none;
-    border-radius: 25px;
-    transition: all .5s ease-in-out;
-    background-color: aquamarine;
     padding-right: 40px;
-    color:aquamarine;
 }
 
 .search-input::placeholder {
@@ -95,40 +94,17 @@ footer > a {
 }
 
 .search-button {
-    width: 60px;
     height: 60px;
     border-style: none;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
     outline: none;
     cursor: pointer;
     border-radius: 50%;
     position: absolute;
     right: 0px;
-    color:#ffffff ;
+    top: 40px;
+    color: rgba(255,255,255,.5);
     background-color:transparent;
-    pointer-events: painted;
-    background-image: url(https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png);
-    background-position: center;
-    background-size: 70%;
-    background-repeat: no-repeat;
-}
-
-.search-button:focus ~ .search-input {
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-}
-
-.search-input:focus {
-    width: 300px;
-    border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
-    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-    color: white;
 }
 
 .result-box {
@@ -155,4 +131,22 @@ footer > a {
 
 .result-text {
     padding: 20px
+}
+
+.result-text > a {
+    display: inline-block;
+    text-decoration: none;
+    height: 35px;
+    padding: .5em;
+    margin: 3px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: black;
+    color: white;
+    
+}
+
+.result-text > a:hover {
+    color: black;
+    background-color: aquamarine;
 }
